@@ -33,7 +33,9 @@
   </div> -->
   <div>
     <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image %><br>
+    <%= f.label :remote_image_url %>
+    <%= f.text_field :remote_image_url %>
     <% if f.object.image? %>
       <%= image_tag f.object.image.thumb.url %>
       <%= f.label :remove_image %>
