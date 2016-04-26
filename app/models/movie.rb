@@ -2,6 +2,8 @@ class Movie < ActiveRecord::Base
 
   has_many :reviews
 
+  mount_uploader :image, ImageUploader
+
   validates :title,
     presence: true
 
@@ -14,13 +16,23 @@ class Movie < ActiveRecord::Base
   validates :description,
     presence: true
 
-  validates :poster_image_url,
-    presence: true
+  # validates :poster_image_url,
+  #   presence: true
 
   validates :release_date,
     presence: true
 
   validate :release_date_is_in_the_past
+
+  validates_processing_of :image
+  
+  # validate :image_size_validation
+ 
+  # private
+  
+  # def image_size_validation
+  #   errors[:image] << "should be less than 500KB" if image.size > 0.5.megabytes
+  # end
 
   def review_average
     if reviews.count > 0
