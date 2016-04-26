@@ -43,3 +43,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# WS - adding photo upload gems
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
