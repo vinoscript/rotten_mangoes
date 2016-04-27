@@ -1,0 +1,13 @@
+
+
+
+<h1>ADMIN -- Rotten Mangoes Users</h1>
+
+<% @users.each do |user| %>
+
+  <p> ID: <%= user.id %>; Name: <%= user.firstname %> <%= user.lastname %>; Email: <%= user.email %> </p>
+  <!-- <p> <%= user.reviews %> </p> -->
+
+<%end%>
+
+
