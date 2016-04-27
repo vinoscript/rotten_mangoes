@@ -9,8 +9,8 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def index 
-    @users = User.all
+  def index
+    @users = User.all.page(params[:page]).per(10)
   end
 
 end

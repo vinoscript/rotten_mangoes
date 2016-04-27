@@ -48,5 +48,9 @@ gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 
-# WS - adding admin user authentication
+# WS - adding admin user authentication - not currently using
 gem 'devise'
+
+# WS - adding pagination
+gem 'kaminari'
+gem 'faker'
