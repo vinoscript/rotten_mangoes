@@ -9,10 +9,11 @@
     <th>Last Name</th>
     <th>Email</th>
     <th>Admin</th>
+    <th>Delete</th>
   </tr>
 <% @users.each do |user| %>   
   <tr>
-    <td><%= user.id %></td>  
+    <td><%= link_to user.id, admin_user_path(user) %></td>  
     <td><%= user.firstname %></td>  
     <td><%= user.lastname %></td>  
     <td><%= user.email %></td>  
@@ -20,4 +21,3 @@
   </tr>
 <% end %>                      
 </table> 
-
