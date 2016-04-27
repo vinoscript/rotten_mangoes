@@ -35,9 +35,7 @@ class Movie < ActiveRecord::Base
   # end
 
   def self.search(search)
-    where("title LIKE ?", "%#{search}%") 
-    # where("director LIKE ?", "%#{search}%")
-    # where("runtime_in_minutes )
+    where("title LIKE ? OR director LIKE ?", "%#{search}%", "%#{search}%") 
   end
 
   def review_average

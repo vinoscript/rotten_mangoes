@@ -3,19 +3,10 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 
-<h3>Search</h3>
+<%= render 'search' %>
 
-<%= form_tag(movies_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
-<%= submit_tag "Search" %>
-<% end %>
-
-<p>Search Results</p>
-
-<% if @movies.present? %>
-  <%=  %> success!
-<% else %>
-  <p>There are no movies containing the term(s) <%= params[:search] %>.</p>
+<% if @movies.blank? %>
+  <h4>There are no movies containing the term <%= params[:search] %>.</h4>
 <% end %>
 
 <br>
