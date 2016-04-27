@@ -2,11 +2,20 @@
 
 <%= paginate @users %>
 
-<% @users.each do |user| %>
-
-  <p> ID: <%= user.id %>; Name: <%= user.firstname %> <%= user.lastname %>; Email: <%= user.email %> </p>
-  <!-- <p> <%= user.reviews %> </p> -->
-
-<%end%>
-
+<table>                         
+  <tr>                          
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+  </tr>
+<% @users.each do |user| %>   
+  <tr>
+    <td><%= user.id %></td>  
+    <td><%= user.firstname %></td>  
+    <td><%= user.lastname %></td>  
+    <td><%= user.email %></td>  
+  </tr>
+<% end %>                      
+</table> 
 

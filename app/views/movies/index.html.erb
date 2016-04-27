@@ -1,7 +1,17 @@
-
 <h1>Rotten Mangoes</h1>
+
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
+
+<%= render 'search' %>
+
+<% if @movies.blank? %>
+  <h4>There are no movies containing the term <%= params[:search] %>.</h4>
+<% end %>
+
+<br>
+
+
 <% @movies.each do |movie| %>
   <%= link_to image_tag(movie.image.thumb || @movie.remote_image_url.thumb), movie_path(movie) %>
   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
