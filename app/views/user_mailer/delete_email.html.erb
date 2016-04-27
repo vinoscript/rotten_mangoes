@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello there, <%= @user.firstname %></h1>
+    <p>
+      Your account at Rotten Mangoes, with email '<%= @user.email %>' has been deleted.<br>
+    </p>
+    <p>
+      To re-sign up for the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for being part of the Rotten Mangoes community and have a great day!</p>
+  </body>
+</html>
