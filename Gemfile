@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.5'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -47,3 +47,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # WS - adding photo upload gems
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+
+# WS - adding admin user authentication
+gem 'devise'
