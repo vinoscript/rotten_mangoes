@@ -1,9 +1,3 @@
-<h1>Rotten Mangoes</h1>
-
-<%= link_to "Submit a movie!", new_movie_path %>
-<hr>
-
-<%= render 'search' %>
 
 <% if @movies.blank? %>
   <h4>There are no movies containing the term <%= params[:search] %>.</h4>
