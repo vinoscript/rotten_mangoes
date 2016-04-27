@@ -26,16 +26,15 @@ class Movie < ActiveRecord::Base
   
   default_scope { order('created_at DESC')}
 
+  scope :search_this, ->(search) { where("title LIKE ? OR director LIKE ?", "%#{search}%", "%#{search}%") }
+
   def self.search(search)
-    where("title LIKE ? OR director LIKE ?", "%#{search}%", "%#{search}%") 
+    # where("title LIKE ? OR director LIKE ?", "%#{search}%", "%#{search}%") 
+    self.search_this(search)
   end
 
   def review_average
-    if reviews.count > 0
-      reviews.sum(:rating_out_of_ten)/reviews.size
-    else 
-      0
-    end
+    reviews.count > 0 ? reviews.sum(:rating_out_of_ten)/reviews.size : "_"
   end
 
   protected
