@@ -1,7 +1,26 @@
-
 <h1>Rotten Mangoes</h1>
+
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
+
+<h3>Search</h3>
+
+<%= form_tag(movies_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<p>Search Results</p>
+
+<% if @movies.present? %>
+  <%=  %> success!
+<% else %>
+  <p>There are no movies containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+
+<br>
+
+
 <% @movies.each do |movie| %>
   <%= link_to image_tag(movie.image.thumb || @movie.remote_image_url.thumb), movie_path(movie) %>
   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>

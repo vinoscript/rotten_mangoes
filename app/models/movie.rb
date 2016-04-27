@@ -34,6 +34,12 @@ class Movie < ActiveRecord::Base
   #   errors[:image] << "should be less than 500KB" if image.size > 0.5.megabytes
   # end
 
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%") 
+    # where("director LIKE ?", "%#{search}%")
+    # where("runtime_in_minutes )
+  end
+
   def review_average
     if reviews.count > 0
       reviews.sum(:rating_out_of_ten)/reviews.size
