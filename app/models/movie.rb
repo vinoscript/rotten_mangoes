@@ -4,17 +4,13 @@ class Movie < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  validates :title,
-    presence: true
+  validates :title, presence: true
 
-  validates :director,
-    presence: true
+  validates :director, presence: true
 
-  validates :runtime_in_minutes,
-    numericality: { only_integer: true }
+  validates :runtime_in_minutes, numericality: { only_integer: true }
 
-  validates :description,
-    presence: true
+  validates :description, presence: true
 
   # validates :poster_image_url,
   #   presence: true
@@ -24,15 +20,11 @@ class Movie < ActiveRecord::Base
 
   validate :release_date_is_in_the_past
 
+  validates :image, presence: true
+
   validates_processing_of :image
   
-  # validate :image_size_validation
- 
-  # private
-  
-  # def image_size_validation
-  #   errors[:image] << "should be less than 500KB" if image.size > 0.5.megabytes
-  # end
+  default_scope { order('created_at DESC')}
 
   def self.search(search)
     where("title LIKE ? OR director LIKE ?", "%#{search}%", "%#{search}%") 
