@@ -1,12 +1,5 @@
 RottenMangoes::Application.routes.draw do
 
-  get "reviews/new"
-  get "reviews/create"
-  get "sessions/new"
-  get "sessions/create"
-  get "users/new"
-  get "users/create"
-
   resources :movies do
     resources :reviews, only: [:new, :create]
   end
@@ -16,7 +9,9 @@ RottenMangoes::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :admin do
-    resources :users
+    resources :users do
+      get :make_admin
+    end
     # resources :movies do 
     #   resources :re
   end

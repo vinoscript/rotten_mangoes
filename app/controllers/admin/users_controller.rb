@@ -43,10 +43,22 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def make_admin
+    @user = User.find(params[:user_id])
+    
+    if @user.update_attribute :admin, true
+      flash[:notice] = "User #{@user.full_name} is admin."
+      redirect_to admin_users_path
+    else
+      flash[:notice] = "Unable to process change."
+      redirect_to admin_users_path
+    end
+  end
+
   protected
 
   def user_params
-    params.require(:user).permit(:email, :firstname, :lastname)
+    params.require(:user).permit(:email, :firstname, :lastname, :admin)
   end
 
 end
