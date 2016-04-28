@@ -9,6 +9,7 @@
     <th>Last Name</th>
     <th>Email</th>
     <th>Admin</th>
+    <th>Update</th>
     <th>Delete</th>
   </tr>
 <% @users.each do |user| %>   
@@ -18,6 +19,7 @@
     <td><%= user.lastname %></td>  
     <td><%= user.email %></td>  
     <td><%= user.admin %></td>
+    <td><%= link_to "Update", edit_admin_user_path(user), method: :get %></td>
     <td><%= link_to "Delete", admin_user_path(user), method: :delete, data: { confirm: 'Are you sure you want to delete this user?'} %> </td>
   </tr>
 <% end %>                      
