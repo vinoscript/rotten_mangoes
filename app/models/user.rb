@@ -19,7 +19,11 @@ class User < ActiveRecord::Base
   def full_name
     "#{firstname} #{lastname}"
   end
+
+  # def make_admin
+  #   # self.admin = true
+  #   # self.save
+  #   self.update_attribute :admin, true
+  # end
     
 end
-
-  # @other_tracks_by_user = Track.where(user_id: @track.user_id).where.not(id: params[:id])
