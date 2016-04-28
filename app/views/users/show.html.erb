@@ -1,0 +1,10 @@
+<%= link_to "Back to Movies", root_path %>
+<br>
+
+<%= render 'layouts/user', object: @user %>
+
+<h4>Reviews by <%= @user.full_name %>:</h4>
+
+<% @user.reviews.each do |review| %>
+  <p>Movie: <%= link_to "#{Movie.find(review.movie_id).title}", movie_path(review.movie_id) %>, "<%= review.text %>", Rating: <%= review.rating_out_of_ten %></p>
+<% end %>

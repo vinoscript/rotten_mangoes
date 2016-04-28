@@ -21,3 +21,5 @@ class User < ActiveRecord::Base
   end
     
 end
+
+  # @other_tracks_by_user = Track.where(user_id: @track.user_id).where.not(id: params[:id])
