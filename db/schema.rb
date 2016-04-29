@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(version: 20160427001125) do
 
   create_table "movies", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.string   "director",           limit: 255
+    t.string   "title"
+    t.string   "director"
     t.integer  "runtime_in_minutes"
     t.text     "description"
-    t.string   "poster_image_url",   limit: 255
+    t.string   "poster_image_url"
     t.datetime "release_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image",              limit: 255
+    t.string   "image"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 20160427001125) do
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "firstname",       limit: 255
-    t.string   "lastname",        limit: 255
-    t.boolean  "admin",                       default: false
+    t.string   "firstname"
+    t.string   "lastname"
+    t.boolean  "admin",           default: false
   end
 
 end

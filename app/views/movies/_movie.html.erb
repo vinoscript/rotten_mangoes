@@ -1,6 +1,6 @@
-  <%= link_to image_tag(movie.image.thumb || @movie.remote_image_url.thumb), movie_path(movie) %>
+  <%= link_to image_tag(movie.image || @movie.remote_image_url, :size => '260x360'), movie_path(movie) %>
   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %>/10</h2>
   <h3><%= formatted_date(movie.release_date) %></h3>
-  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-  <p><%= movie.description %></p>
+  <h4>Director: <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+  <p><%= truncate(movie.description, :omission => "...", :length => 200) %></p>
   <hr>
