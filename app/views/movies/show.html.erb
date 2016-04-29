@@ -1,6 +1,8 @@
 <%= link_to "Back to all movies", movies_path %><br/>
 
-<%= link_to image_tag(@movie.image.thumb || @movie.remote_image_url.thumb), movie_path(@movie) %>
+<div class="container">
+
+<%= link_to image_tag(@movie.image || @movie.remote_image_url, :size => '260x360'), movie_path(@movie) %>
 <h2><%= @movie.title %> (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, data: { confirm: 'Are you sure you want to delete this movie?'} %>)</h2>
 <h3><%= @movie.release_date %></h3>
 <h4>Dir. <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</h4>
@@ -19,3 +21,5 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to see reviews and add your own.</p> 
 <% end %>
+
+</div>

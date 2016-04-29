@@ -58,3 +58,6 @@ gem 'faker'
 # WS - populating movies with data from IMDB
 gem 'imdb', '~> 0.8'
 
+# WS 
+gem 'bootstrap-sass'
+
