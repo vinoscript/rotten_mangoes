@@ -6,23 +6,23 @@ class Movie < ActiveRecord::Base
 
   validates :title, presence: true
 
-  validates :director, presence: true
+  # validates :director, presence: true
 
-  validates :runtime_in_minutes, numericality: { only_integer: true }
+  # validates :runtime_in_minutes, numericality: { only_integer: true }
 
-  validates :description, presence: true
+  # validates :description, presence: true
 
   # validates :poster_image_url,
   #   presence: true
 
-  validates :release_date,
-    presence: true
+  # validates :release_date,
+  #   presence: true
 
-  validate :release_date_is_in_the_past
+  # validate :release_date_is_in_the_past
 
-  validates :image, presence: true
+  # validates :image, presence: true
 
-  validates_processing_of :image
+  # validates_processing_of :image
   
   default_scope { order('created_at DESC')}
 

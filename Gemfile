@@ -54,3 +54,7 @@ gem 'devise'
 # WS - adding pagination
 gem 'kaminari'
 gem 'faker'
+
+# WS - populating movies with data from IMDB
+gem 'imdb', '~> 0.8'
+
