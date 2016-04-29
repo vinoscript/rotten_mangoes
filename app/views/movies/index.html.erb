@@ -5,8 +5,12 @@
 
 <br>
 
-
-<% @movies.each do |movie| %>
-  <%= render movie %>
+<div class="container">
+<% @movies.each_slice(3) do |movie| %>
+  <div class="row">
+  <% movie.each do |movie| %>
+    <%= render movie %>
+  <% end %>
+  </div>
 <% end %>
-
+</div>

@@ -8,16 +8,11 @@
 </head>
 <body>
 
+  <%= render 'layouts/navbar' %>
+
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value) %>
   <% end %>
-
-  <%= link_to "Rotten Mangoes", root_path %> --- <%= link_to "Submit a movie!", new_movie_path %>
-  <br>
-  <hr>
-
-  <%= render 'layouts/search' %>
-  <br>
 
   <%= yield %>
 
